@@ -1,0 +1,14 @@
+version: "3"
+services:
+  db:
+   image: ionelanicuta05/happystore:latest
+   deploy:
+     replicas: 1
+     restart_policy:
+       condition: on-failure
+   ports:
+     - "8888:5000"
+   networks:
+     - dbnet
+networks:
+  dbnet:
